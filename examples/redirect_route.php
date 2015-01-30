@@ -2,7 +2,7 @@
 
 require_once './../vendor/autoload.php';
 
-$app = new \Silex\Application();
+$app = new \Silex\Application(['debug' => true]);
 
 $app->register(new \Silex\Provider\UrlGeneratorServiceProvider());
 $app->register(new \Glaubinix\Silex\Provider\RedirectRouteProvider());
