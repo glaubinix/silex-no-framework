@@ -1,0 +1,19 @@
+{
+    "name": "glaubinix/silex-no-framework",
+    "description": "Various improvements for Silex applications",
+    "require": {
+        "qafoolabs/no-framework-bundle": "~2.2",
+        "silex/silex": "~1.2"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Stephan Vock",
+            "email": "stephan.vock@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {"Glaubinix\\Silex\\": "src/"}
+    },
+    "minimum-stability": "stable"
+}
