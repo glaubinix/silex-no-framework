@@ -5,6 +5,10 @@
         "qafoolabs/no-framework-bundle": "~2.2",
         "silex/silex": "~1.2"
     },
+    "require-dev": {
+        "twig/twig": "~1.18",
+        "symfony/twig-bridge": "~2.6"
+    },
     "license": "MIT",
     "authors": [
         {
