@@ -34,4 +34,10 @@ $app->get('/security', function(\QafooLabs\MVC\TokenContext $context) {
     }
 });
 
+// FormRequest example (will throw an exception because no form is defined)
+$app->register(new \Silex\Provider\FormServiceProvider());
+$app->get('/form', function(\QafooLabs\MVC\FormRequest $formRequest) {
+    $formRequest->getForm('dummyform');
+});
+
 $app->run();
