@@ -14,4 +14,24 @@ $app->get('/flash', function(\QafooLabs\MVC\Flash $flashBag) {
     return new \Symfony\Component\HttpFoundation\Response('flash added');
 });
 
+// Token context example
+$app->register(new \Silex\Provider\SecurityServiceProvider(),
+    [
+        'security.firewalls' => [
+            'unsecured' => [
+                'anonymous' => true,
+            ]
+        ]
+    ]
+);
+
+$app->get('/security', function(\QafooLabs\MVC\TokenContext $context) {
+    if ($context->hasNonAnonymousToken()) {
+        $userName = $context->getCurrentUser()->getUsername();
+        return new \Symfony\Component\HttpFoundation\Response(sprintf('user: %s', $userName));
+    } else {
+        return new \Symfony\Component\HttpFoundation\Response('anonymous user');
+    }
+});
+
 $app->run();
