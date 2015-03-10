@@ -6,9 +6,9 @@
         "silex/silex": "~1.2"
     },
     "require-dev": {
-        "twig/twig": "~1.18",
         "symfony/form": "~2.6",
         "symfony/security": "~2.6",
+        "twig/twig": "~1.18",
         "glaubinix/silex-twig-engine": "~1.0"
     },
     "license": "MIT",
@@ -20,6 +20,12 @@
     ],
     "autoload": {
         "psr-4": {"Glaubinix\\Silex\\": "src/"}
+    },
+    "suggest": {
+        "symfony/security": "Allows usage of TokenContext in controller methods via ParamConverter",
+        "symfony/form": "Allows usage of FormRequest in controller methods via ParamConverter",
+        "glaubinix/silex-twig-engine" : "Requirement for usage of ViewListener with twig. The View Listener can also be used without Twig!",
+        "twig/twig" : "Requirement for usage of ViewListener with twig. The View Listener can also be used without Twig!"
     },
     "minimum-stability": "stable"
 }
