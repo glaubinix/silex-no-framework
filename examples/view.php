@@ -13,12 +13,12 @@ class ExampleController
 }
 
 $app = new \Silex\Application(['debug' => true]);
-
 $app->register(new \Silex\Provider\TwigServiceProvider(),[
     'twig.path' => [
         __DIR__ . '/templates',
     ]
 ]);
+$app->register(new \Glaubinix\TwigEngine\TwigEngineServiceProvider());
 $app->register(new \Glaubinix\Silex\Provider\ViewProvider());
 
 $app->get('/closure', function() {

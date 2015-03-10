@@ -4,16 +4,12 @@ namespace Glaubinix\Silex\Provider;
 
 use Glaubinix\Silex\View\ControllerServiceTemplateGuesser;
 use Glaubinix\Silex\View\SilexClosureTemplateGuesser;
-use Glaubinix\Silex\View\SilexTemplateGuesser;
 use Glaubinix\Silex\View\SymfonyNamespaceControllerTemplateGuesser;
 use Glaubinix\Silex\View\TemplateGuesserChain;
-use QafooLabs\Bundle\NoFrameworkBundle\Controller\QafooControllerNameParser;
 use QafooLabs\Bundle\NoFrameworkBundle\EventListener\ViewListener;
 use Silex\Application;
 use Silex\ServiceProviderInterface;
-use Symfony\Bridge\Twig\TwigEngine;
 use Symfony\Component\HttpKernel\KernelEvents;
-use Symfony\Component\Templating\TemplateNameParser;
 
 class ViewProvider implements ServiceProviderInterface
 {
@@ -29,14 +25,6 @@ class ViewProvider implements ServiceProviderInterface
                 new ControllerServiceTemplateGuesser($app),
                 new SymfonyNamespaceControllerTemplateGuesser(),
             ]);
-        });
-
-        $app['silex.twig.template_name_parser'] = $app->share(function() {
-            return new TemplateNameParser();
-        });
-
-        $app['templating'] = $app->share(function (Application $app) {
-            return new TwigEngine($app['twig'], $app['silex.twig.template_name_parser']);
         });
     }
 
