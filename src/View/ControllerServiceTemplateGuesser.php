@@ -41,6 +41,7 @@ class ControllerServiceTemplateGuesser implements ChainableTemplateGuesser
 
         $reflection = new \ReflectionClass($fullClassName);
         $className = $reflection->getShortName();
+        $method = $actionName ? $actionName : $method;
 
         if (!preg_match('/((.)+)Controller$/', $className, $matchController)) {
             throw new \InvalidArgumentException(sprintf('The "%s" class does not look like a controller class (the class name must end with "Controller")', $className));
