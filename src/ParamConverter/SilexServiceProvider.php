@@ -5,7 +5,8 @@ namespace Glaubinix\Silex\ParamConverter;
 use QafooLabs\Bundle\NoFrameworkBundle\ParamConverter\ServiceProviderInterface;
 use Silex\Application;
 use Symfony\Component\Form\FormFactoryInterface;
-use Symfony\Component\Security\Core\SecurityContextInterface;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
+use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 
 class SilexServiceProvider implements ServiceProviderInterface
 {
@@ -31,10 +32,18 @@ class SilexServiceProvider implements ServiceProviderInterface
     }
 
     /**
-     * @return SecurityContextInterface
+     * @return TokenStorageInterface
      */
-    public function getSecurityContext()
+    public function getTokenStorage()
     {
-        return $this->app['security'];
+        return $this->app['security.token_storage'];
+    }
+
+    /**
+     * @return AuthorizationCheckerInterface
+     */
+    public function getAuthorizationChecker()
+    {
+        return $this->app['security.authorization_checker'];
     }
 }

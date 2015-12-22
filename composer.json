@@ -2,14 +2,14 @@
     "name": "glaubinix/silex-no-framework",
     "description": "Various improvements for Silex applications",
     "require": {
-        "qafoolabs/no-framework-bundle": "~2.3",
-        "silex/silex": "~1.2"
+        "qafoolabs/no-framework-bundle": "^2.4",
+        "silex/silex": "^1.3"
     },
     "require-dev": {
-        "symfony/form": "~2.6",
-        "symfony/security": "~2.6",
+        "symfony/form": "^2.8|^3.0",
+        "symfony/security": "^2.8|^3.0",
         "twig/twig": "~1.18",
-        "glaubinix/silex-twig-engine": "~1.0"
+        "glaubinix/silex-twig-engine": "^1.1"
     },
     "license": "MIT",
     "authors": [
