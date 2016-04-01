@@ -1,0 +1,27 @@
+language: php
+
+sudo: false
+
+php:
+  - 5.6
+  - 7
+
+install: composer install
+
+cache:
+  directories:
+  - $HOME/.composer/cache/repo/
+  - $TRAVIS_BUILD_DIR/vendor/
+
+script:
+  - ./vendor/bin/phpunit tests
+  - ./vendor/bin/php-cs-fixer fix src --dry-run
+  - ./vendor/bin/php-cs-fixer fix tests --dry-run
+
+branches:
+  only:
+    - master
+
+notifications:
+  email:
+    on_success: never
