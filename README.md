@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/glaubinix/silex-no-framework.svg?branch=master)](https://travis-ci.org/glaubinix/silex-no-framework)
 # silex-no-framework
 
 This library mostly contains silex ServiceProviders for the [QafooLabsNoFrameworkBundle](https://github.com/QafooLabs/QafooLabsNoFrameworkBundle). Only use what you want to use.
