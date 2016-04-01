@@ -6,5 +6,8 @@ class DummyController
 {
     public function dummyAction()
     {
+        return [
+            'name' => 'dummy',
+        ];
     }
 }
