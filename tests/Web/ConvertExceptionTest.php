@@ -4,13 +4,14 @@ namespace Glaubinix\Tests\Silex\Web;
 
 use Glaubinix\Silex\Provider\ConvertExceptionProvider;
 use Glaubinix\Tests\Silex\Fixtures\IAmATeaPodException;
+use Silex\Application;
 use Silex\WebTestCase;
 
 class ConvertExceptionTest extends WebTestCase
 {
     public function createApplication()
     {
-        $app = new \Silex\Application();
+        $app = new Application();
         $app->register(new ConvertExceptionProvider(), [
             'qafoo.exception_class_map' => [
                 IAmATeaPodException::class => 419,
