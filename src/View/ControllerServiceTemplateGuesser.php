@@ -24,7 +24,7 @@ class ControllerServiceTemplateGuesser implements ChainableTemplateGuesser
      */
     public function supports($controller)
     {
-        if (false === strpos($controller, '::') && false !== strpos($controller, ':')) {
+        if (is_string($controller) && false === strpos($controller, '::') && false !== strpos($controller, ':')) {
             return true;
         }
 

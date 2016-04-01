@@ -10,7 +10,8 @@
         "symfony/security": "^2.8|^3.0",
         "twig/twig": "~1.18",
         "glaubinix/silex-twig-engine": "^1.1",
-        "fabpot/php-cs-fixer": "^1.11"
+        "fabpot/php-cs-fixer": "^1.11",
+        "phpunit/phpunit": "^5.3"
     },
     "license": "MIT",
     "authors": [
@@ -20,7 +21,10 @@
         }
     ],
     "autoload": {
-        "psr-4": {"Glaubinix\\Silex\\": "src/"}
+        "psr-4": {
+            "Glaubinix\\Silex\\": "src/",
+            "Glaubinix\\Tests\\Silex\\": "tests/"
+        }
     },
     "suggest": {
         "symfony/security": "Allows usage of TokenContext in controller methods via ParamConverter",

@@ -9,7 +9,7 @@ class SymfonyNamespaceControllerTemplateGuesser implements ChainableTemplateGues
      */
     public function supports($controller)
     {
-        if (false !== strpos($controller, '::')) {
+        if (is_string($controller) && false !== strpos($controller, '::')) {
             return true;
         }
 
@@ -22,6 +22,10 @@ class SymfonyNamespaceControllerTemplateGuesser implements ChainableTemplateGues
     public function guessControllerTemplateName($controller, $actionName, $format, $engine)
     {
         list($fullClassName, $method) = explode('::', $controller, 2);
+
+        if (!class_exists($fullClassName)) {
+            throw new \InvalidArgumentException(sprintf('The "%s" class does not look like a valid controller class', $fullClassName));
+        }
 
         $reflection = new \ReflectionClass($fullClassName);
         $className = $reflection->getShortName();
