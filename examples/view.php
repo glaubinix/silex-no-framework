@@ -1,6 +1,6 @@
 <?php
 
-require_once dirname(__DIR__) .'/vendor/autoload.php';
+require_once dirname(__DIR__).'/vendor/autoload.php';
 
 class ExampleController
 {
@@ -13,15 +13,15 @@ class ExampleController
 }
 
 $app = new \Silex\Application(['debug' => true]);
-$app->register(new \Silex\Provider\TwigServiceProvider(),[
+$app->register(new \Silex\Provider\TwigServiceProvider(), [
     'twig.path' => [
-        __DIR__ . '/templates',
-    ]
+        __DIR__.'/templates',
+    ],
 ]);
 $app->register(new \Glaubinix\TwigEngine\TwigEngineServiceProvider());
 $app->register(new \Glaubinix\Silex\Provider\ViewProvider());
 
-$app->get('/closure', function() {
+$app->get('/closure', function () {
     return [];
 });
 
@@ -30,7 +30,7 @@ $app->get('/namespace', 'ExampleController::example');
 
 // Controller as a service example
 $app->register(new \Silex\Provider\ServiceControllerServiceProvider());
-$app['example.controller'] = $app->share(function() {
+$app['example.controller'] = $app->share(function () {
     return new ExampleController();
 });
 

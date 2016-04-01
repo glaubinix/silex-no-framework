@@ -17,6 +17,7 @@ script:
   - ./vendor/bin/phpunit tests
   - ./vendor/bin/php-cs-fixer fix src --dry-run
   - ./vendor/bin/php-cs-fixer fix tests --dry-run
+  - ./vendor/bin/php-cs-fixer fix examples --dry-run
 
 branches:
   only:

@@ -1,17 +1,17 @@
 <?php
 
-require_once dirname(__DIR__) .'/vendor/autoload.php';
+require_once dirname(__DIR__).'/vendor/autoload.php';
 
 $app = new \Silex\Application(['debug' => true]);
 
 $app->register(new \Silex\Provider\UrlGeneratorServiceProvider());
 $app->register(new \Glaubinix\Silex\Provider\RedirectRouteProvider());
 
-$app->get('/', function() {
+$app->get('/', function () {
     return new \QafooLabs\MVC\RedirectRoute('redirected');
 });
 
-$app->get('/redirected', function() {
+$app->get('/redirected', function () {
     return 'redirected';
 })->bind('redirected');
 
