@@ -15,7 +15,7 @@ class ConvertExceptionProvider implements ServiceProviderInterface
             $app['qafoo.exception_class_map'] = [];
         }
 
-        $app['qafoo.listener.convert_exception'] = $app->share(function(Application $app) {
+        $app['qafoo.listener.convert_exception'] = $app->share(function (Application $app) {
             return new ConvertExceptionListener($app['logger'], $app['qafoo.exception_class_map']);
         });
     }

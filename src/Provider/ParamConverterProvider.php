@@ -15,11 +15,11 @@ class ParamConverterProvider implements ServiceProviderInterface
      */
     public function register(Application $app)
     {
-        $app['glaubinix.param_converter.provider'] = $app->share(function(Application $app) {
+        $app['glaubinix.param_converter.provider'] = $app->share(function (Application $app) {
             return new SilexServiceProvider($app);
         });
 
-        $app['qafoo.listener.param_converter'] = $app->share(function(Application $app) {
+        $app['qafoo.listener.param_converter'] = $app->share(function (Application $app) {
             return new ParamConverterListener($app['glaubinix.param_converter.provider']);
         });
     }

@@ -9,7 +9,8 @@
         "symfony/form": "^2.8|^3.0",
         "symfony/security": "^2.8|^3.0",
         "twig/twig": "~1.18",
-        "glaubinix/silex-twig-engine": "^1.1"
+        "glaubinix/silex-twig-engine": "^1.1",
+        "fabpot/php-cs-fixer": "^1.11"
     },
     "license": "MIT",
     "authors": [

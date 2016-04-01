@@ -20,7 +20,7 @@ class TemplateGuesserChain implements TemplateGuesser
     }
 
     /**
-     * Return a template reference for the given controller, format, engine
+     * Return a template reference for the given controller, format, engine.
      *
      * @param string $controller
      * @param string $actionName
@@ -31,7 +31,7 @@ class TemplateGuesserChain implements TemplateGuesser
      */
     public function guessControllerTemplateName($controller, $actionName, $format, $engine)
     {
-        foreach($this->templateGuesser as $templateGuesser) {
+        foreach ($this->templateGuesser as $templateGuesser) {
             if ($templateGuesser->supports($controller)) {
                 return $templateGuesser->guessControllerTemplateName($controller, $actionName, $format, $engine);
             }

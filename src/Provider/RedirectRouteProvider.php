@@ -11,7 +11,7 @@ class RedirectRouteProvider implements ServiceProviderInterface
 {
     public function register(Application $app)
     {
-        $app['qafoo.listener.redirect'] = $app->share(function(Application $app) {
+        $app['qafoo.listener.redirect'] = $app->share(function (Application $app) {
             return new RedirectListener($app['url_generator']);
         });
     }

@@ -8,6 +8,7 @@ interface ChainableTemplateGuesser extends TemplateGuesser
 {
     /**
      * @param mixed $controller
+     *
      * @return bool
      */
     public function supports($controller);

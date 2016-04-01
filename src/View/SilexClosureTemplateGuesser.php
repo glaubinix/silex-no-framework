@@ -5,7 +5,7 @@ namespace Glaubinix\Silex\View;
 class SilexClosureTemplateGuesser implements ChainableTemplateGuesser
 {
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function supports($controller)
     {
@@ -17,7 +17,7 @@ class SilexClosureTemplateGuesser implements ChainableTemplateGuesser
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function guessControllerTemplateName($controller, $actionName, $format, $engine)
     {

@@ -20,7 +20,7 @@ class ControllerServiceTemplateGuesser implements ChainableTemplateGuesser
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function supports($controller)
     {
@@ -32,12 +32,12 @@ class ControllerServiceTemplateGuesser implements ChainableTemplateGuesser
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function guessControllerTemplateName($controller, $actionName, $format, $engine)
     {
         list($serviceAlias, $method) = explode(':', $controller, 2);
-        $fullClassName =  get_class($this->app[$serviceAlias]);
+        $fullClassName = get_class($this->app[$serviceAlias]);
 
         $reflection = new \ReflectionClass($fullClassName);
         $className = $reflection->getShortName();

@@ -15,11 +15,11 @@ class ViewProvider implements ServiceProviderInterface
 {
     public function register(Application $app)
     {
-        $app['qafoo.listener.view'] = $app->share(function(Application $app) {
+        $app['qafoo.listener.view'] = $app->share(function (Application $app) {
             return new ViewListener($app['templating'], $app['glaubinix.view.template_guesser'], 'twig');
         });
 
-        $app['glaubinix.view.template_guesser'] = $app->share(function(Application $app) {
+        $app['glaubinix.view.template_guesser'] = $app->share(function (Application $app) {
             return new TemplateGuesserChain([
                 new SilexClosureTemplateGuesser(),
                 new ControllerServiceTemplateGuesser($app),
