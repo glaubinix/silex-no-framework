@@ -3,7 +3,7 @@
 This library mostly contains silex ServiceProviders for the [QafooLabsNoFrameworkBundle](https://github.com/QafooLabs/QafooLabsNoFrameworkBundle). Only use what you want to use.
 
 ## Features
-All supported features have a sample file in the examples folder.
+All supported features have a sample file in the examples folder and web test cases in the tests folder.
 
 ### Exception Converter
 Maps uncaught exceptions to other exceptions or status codes.
