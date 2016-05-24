@@ -2,19 +2,19 @@
 
 namespace Glaubinix\Silex\View;
 
-use Silex\Application;
+use Pimple\Container;
 
 class ControllerServiceTemplateGuesser implements ChainableTemplateGuesser
 {
     /**
-     * @var Application
+     * @var Container
      */
     private $app;
 
     /**
-     * @param Application $app
+     * @param Container $app
      */
-    public function __construct(Application $app)
+    public function __construct(Container $app)
     {
         $this->app = $app;
     }

@@ -23,9 +23,9 @@ class ViewTest extends WebTestCase
         $app->register(new TwigEngineServiceProvider());
         $app->register(new ViewProvider());
         $app->register(new ServiceControllerServiceProvider());
-        $app['dummy.controller'] = $app->share(function () {
+        $app['dummy.controller'] = function () {
             return new DummyController();
-        });
+        };
 
         return $app;
     }

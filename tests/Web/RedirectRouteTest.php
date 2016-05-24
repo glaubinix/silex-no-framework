@@ -4,16 +4,17 @@ namespace Glaubinix\Tests\Silex\Web;
 
 use Glaubinix\Silex\Provider\RedirectRouteProvider;
 use QafooLabs\MVC\RedirectRoute;
-use Silex\Provider\UrlGeneratorServiceProvider;
+use Silex\Application;
+use Silex\Provider\RoutingServiceProvider;
 use Symfony\Component\HttpFoundation\Response;
 
 class RedirectRouteTest extends \Silex\WebTestCase
 {
     public function createApplication()
     {
-        $app = new \Silex\Application();
+        $app = new Application();
         $app->register(new RedirectRouteProvider());
-        $app->register(new UrlGeneratorServiceProvider());
+        $app->register(new RoutingServiceProvider());
 
         return $app;
     }

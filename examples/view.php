@@ -30,9 +30,9 @@ $app->get('/namespace', 'ExampleController::example');
 
 // Controller as a service example
 $app->register(new \Silex\Provider\ServiceControllerServiceProvider());
-$app['example.controller'] = $app->share(function () {
+$app['example.controller'] = function () {
     return new ExampleController();
-});
+};
 
 $app->get('/service', 'example.controller:example');
 
