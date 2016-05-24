@@ -56,6 +56,8 @@ class ParamConverterTest extends WebTestCase
 
         $this->app->get('/form', function (FormRequest $formRequest) {
             $formRequest->handle(TextType::class);
+
+            return new Response('form handled');
         });
     }
 
@@ -79,11 +81,10 @@ class ParamConverterTest extends WebTestCase
 
     public function testForm()
     {
-        $this->markTestSkipped('https://github.com/QafooLabs/QafooLabsNoFrameworkBundle/issues/19');
         $client = $this->createClient();
         $client->request('GET', '/form');
 
         $this->assertTrue($client->getResponse()->isSuccessful());
-        $this->assertSame('anonymous user', $client->getResponse()->getContent());
+        $this->assertSame('form handled', $client->getResponse()->getContent());
     }
 }
