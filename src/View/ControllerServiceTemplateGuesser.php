@@ -6,14 +6,9 @@ use Pimple\Container;
 
 class ControllerServiceTemplateGuesser implements ChainableTemplateGuesser
 {
-    /**
-     * @var Container
-     */
+    /** @var Container */
     private $app;
 
-    /**
-     * @param Container $app
-     */
     public function __construct(Container $app)
     {
         $this->app = $app;

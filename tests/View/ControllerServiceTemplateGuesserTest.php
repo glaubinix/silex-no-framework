@@ -5,9 +5,10 @@ namespace Glaubinix\Tests\Silex\View;
 use Glaubinix\Silex\View\ControllerServiceTemplateGuesser;
 use Glaubinix\Tests\Silex\Fixtures\Dummy;
 use Glaubinix\Tests\Silex\Fixtures\DummyController;
+use PHPUnit\Framework\TestCase;
 use Silex\Application;
 
-class ControllerServiceTemplateGuesserTest extends \PHPUnit_Framework_TestCase
+class ControllerServiceTemplateGuesserTest extends TestCase
 {
     /** @var ControllerServiceTemplateGuesser */
     private $guesser;
@@ -27,7 +28,8 @@ class ControllerServiceTemplateGuesserTest extends \PHPUnit_Framework_TestCase
 
     public function testSupportsDoesNotSupportClosures()
     {
-        $this->assertFalse($this->guesser->supports(function () {}));
+        $this->assertFalse($this->guesser->supports(function () {
+        }));
     }
 
     public function testSupportsDoesNotSupportSymfonyServiceDefinition()

@@ -5,8 +5,9 @@ namespace Glaubinix\Tests\Silex\View;
 use Glaubinix\Silex\View\SymfonyNamespaceControllerTemplateGuesser;
 use Glaubinix\Tests\Silex\Fixtures\Dummy;
 use Glaubinix\Tests\Silex\Fixtures\DummyController;
+use PHPUnit\Framework\TestCase;
 
-class SymfonyNamespaceControllerTemplateGuesserTest extends \PHPUnit_Framework_TestCase
+class SymfonyNamespaceControllerTemplateGuesserTest extends TestCase
 {
     /** @var SymfonyNamespaceControllerTemplateGuesser */
     private $guesser;
@@ -23,7 +24,8 @@ class SymfonyNamespaceControllerTemplateGuesserTest extends \PHPUnit_Framework_T
 
     public function testSupportsDoesNotSupportClosures()
     {
-        $this->assertFalse($this->guesser->supports(function () {}));
+        $this->assertFalse($this->guesser->supports(function () {
+        }));
     }
 
     public function testGuessControllerTemplateName()

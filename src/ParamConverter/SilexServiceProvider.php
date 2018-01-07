@@ -15,9 +15,6 @@ class SilexServiceProvider implements ServiceProviderInterface
      */
     private $app;
 
-    /**
-     * @param Application $app
-     */
     public function __construct(Application $app)
     {
         $this->app = $app;

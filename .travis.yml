@@ -1,8 +1,7 @@
 language: php
 
 php:
-  - 5.6
-  - 7
+  - 7.2
 
 install: composer install
 
@@ -13,9 +12,9 @@ cache:
 
 script:
   - ./vendor/bin/phpunit tests
-  - ./vendor/bin/php-cs-fixer fix src --dry-run
-  - ./vendor/bin/php-cs-fixer fix tests --dry-run
-  - ./vendor/bin/php-cs-fixer fix examples --dry-run
+  - ./vendor/bin/php-cs-fixer fix src --dry-run -v --rules=@PSR2
+  - ./vendor/bin/php-cs-fixer fix tests --dry-run -v --rules=@PSR2
+  - ./vendor/bin/php-cs-fixer fix examples --dry-run -v --rules=@PSR2
 
 branches:
   only:

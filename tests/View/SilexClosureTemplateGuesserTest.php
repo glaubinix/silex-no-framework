@@ -3,8 +3,9 @@
 namespace Glaubinix\Tests\Silex\View;
 
 use Glaubinix\Silex\View\SilexClosureTemplateGuesser;
+use PHPUnit\Framework\TestCase;
 
-class SilexClosureTemplateGuesserTest extends \PHPUnit_Framework_TestCase
+class SilexClosureTemplateGuesserTest extends TestCase
 {
     /** @var SilexClosureTemplateGuesser */
     private $guesser;
@@ -16,7 +17,8 @@ class SilexClosureTemplateGuesserTest extends \PHPUnit_Framework_TestCase
 
     public function testSupportsClosure()
     {
-        $this->assertTrue($this->guesser->supports(function () {}));
+        $this->assertTrue($this->guesser->supports(function () {
+        }));
     }
 
     public function testSupportsDoesNotSupportServiceMethodDefinition()
